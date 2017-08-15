@@ -190,6 +190,9 @@ define(['exports', 'aurelia-templating', 'aurelia-pal'], function (exports, _aur
         var _animStart = void 0;
         var animHasStarted = false;
         _this4._addMultipleEventListener(element, 'webkitAnimationStart animationstart', _animStart = function animStart(evAnimStart) {
+          if (evAnimStart.target !== element) {
+            return;
+          }
           animHasStarted = true;
           _this4.isAnimating = true;
 
@@ -203,6 +206,9 @@ define(['exports', 'aurelia-templating', 'aurelia-pal'], function (exports, _aur
         var _animEnd = void 0;
         _this4._addMultipleEventListener(element, 'webkitAnimationEnd animationend', _animEnd = function animEnd(evAnimEnd) {
           if (!animHasStarted) {
+            return;
+          }
+          if (evAnimEnd.target !== element) {
             return;
           }
 
@@ -270,7 +276,7 @@ define(['exports', 'aurelia-templating', 'aurelia-pal'], function (exports, _aur
     CssAnimator.prototype.removeClass = function removeClass(element, className) {
       var _this5 = this;
 
-      var suppressEvents = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
+      var suppressEvents = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
       return new Promise(function (resolve, reject) {
         var classList = element.classList;
@@ -290,6 +296,9 @@ define(['exports', 'aurelia-templating', 'aurelia-pal'], function (exports, _aur
         var _animStart2 = void 0;
         var animHasStarted = false;
         _this5._addMultipleEventListener(element, 'webkitAnimationStart animationstart', _animStart2 = function animStart(evAnimStart) {
+          if (evAnimStart.target !== element) {
+            return;
+          }
           animHasStarted = true;
           _this5.isAnimating = true;
 
@@ -305,6 +314,9 @@ define(['exports', 'aurelia-templating', 'aurelia-pal'], function (exports, _aur
         var _animEnd2 = void 0;
         _this5._addMultipleEventListener(element, 'webkitAnimationEnd animationend', _animEnd2 = function animEnd(evAnimEnd) {
           if (!animHasStarted) {
+            return;
+          }
+          if (evAnimEnd.target !== element) {
             return;
           }
 
@@ -345,7 +357,7 @@ define(['exports', 'aurelia-templating', 'aurelia-pal'], function (exports, _aur
     CssAnimator.prototype.addClass = function addClass(element, className) {
       var _this6 = this;
 
-      var suppressEvents = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
+      var suppressEvents = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
       return new Promise(function (resolve, reject) {
         var classList = element.classList;
@@ -357,6 +369,9 @@ define(['exports', 'aurelia-templating', 'aurelia-pal'], function (exports, _aur
         var _animStart3 = void 0;
         var animHasStarted = false;
         _this6._addMultipleEventListener(element, 'webkitAnimationStart animationstart', _animStart3 = function animStart(evAnimStart) {
+          if (evAnimStart.target !== element) {
+            return;
+          }
           animHasStarted = true;
           _this6.isAnimating = true;
 
@@ -372,6 +387,9 @@ define(['exports', 'aurelia-templating', 'aurelia-pal'], function (exports, _aur
         var _animEnd3 = void 0;
         _this6._addMultipleEventListener(element, 'webkitAnimationEnd animationend', _animEnd3 = function animEnd(evAnimEnd) {
           if (!animHasStarted) {
+            return;
+          }
+          if (evAnimEnd.target !== element) {
             return;
           }
 

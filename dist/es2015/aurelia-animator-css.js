@@ -170,6 +170,9 @@ export let CssAnimator = class CssAnimator {
       let animStart;
       let animHasStarted = false;
       this._addMultipleEventListener(element, 'webkitAnimationStart animationstart', animStart = evAnimStart => {
+        if (evAnimStart.target !== element) {
+          return;
+        }
         animHasStarted = true;
         this.isAnimating = true;
 
@@ -183,6 +186,9 @@ export let CssAnimator = class CssAnimator {
       let animEnd;
       this._addMultipleEventListener(element, 'webkitAnimationEnd animationend', animEnd = evAnimEnd => {
         if (!animHasStarted) {
+          return;
+        }
+        if (evAnimEnd.target !== element) {
           return;
         }
 
@@ -266,6 +272,9 @@ export let CssAnimator = class CssAnimator {
       let animStart;
       let animHasStarted = false;
       this._addMultipleEventListener(element, 'webkitAnimationStart animationstart', animStart = evAnimStart => {
+        if (evAnimStart.target !== element) {
+          return;
+        }
         animHasStarted = true;
         this.isAnimating = true;
 
@@ -281,6 +290,9 @@ export let CssAnimator = class CssAnimator {
       let animEnd;
       this._addMultipleEventListener(element, 'webkitAnimationEnd animationend', animEnd = evAnimEnd => {
         if (!animHasStarted) {
+          return;
+        }
+        if (evAnimEnd.target !== element) {
           return;
         }
 
@@ -329,6 +341,9 @@ export let CssAnimator = class CssAnimator {
       let animStart;
       let animHasStarted = false;
       this._addMultipleEventListener(element, 'webkitAnimationStart animationstart', animStart = evAnimStart => {
+        if (evAnimStart.target !== element) {
+          return;
+        }
         animHasStarted = true;
         this.isAnimating = true;
 
@@ -344,6 +359,9 @@ export let CssAnimator = class CssAnimator {
       let animEnd;
       this._addMultipleEventListener(element, 'webkitAnimationEnd animationend', animEnd = evAnimEnd => {
         if (!animHasStarted) {
+          return;
+        }
+        if (evAnimEnd.target !== element) {
           return;
         }
 

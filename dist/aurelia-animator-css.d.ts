@@ -73,7 +73,6 @@ export declare class CssAnimator {
   addClass(element: Element, className: string, suppressEvents?: boolean): Promise<boolean>;
 }
 
-/* Public API End */
 /**
  * Configuires the CssAnimator as the default animator for Aurelia.
  * @param config The FrameworkConfiguration instance.
